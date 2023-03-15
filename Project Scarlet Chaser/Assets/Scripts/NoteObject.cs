@@ -40,6 +40,7 @@ public class NoteObject : MonoBehaviour
         if(other.tag == "Activator")
         {
             canBePressed = true;
+           
         }
     }
 
