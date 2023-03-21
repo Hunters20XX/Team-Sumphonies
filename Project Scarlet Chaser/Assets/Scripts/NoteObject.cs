@@ -104,7 +104,7 @@ public class NoteObject : MonoBehaviour
         {
             GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
             GameObject.Find("Button1").GetComponent<Score>().hit = 0;
-            //gameObject.SetActive(false);
+            dead = true;
         }
     }
 
