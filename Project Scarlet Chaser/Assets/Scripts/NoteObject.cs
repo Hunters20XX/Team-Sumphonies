@@ -104,12 +104,12 @@ public class NoteObject : MonoBehaviour
         {
             GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
             GameObject.Find("Button1").GetComponent<Score>().hit = 0;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {
+    { 
         if(other.tag == "Activator")
         {
             canBePressed = true;

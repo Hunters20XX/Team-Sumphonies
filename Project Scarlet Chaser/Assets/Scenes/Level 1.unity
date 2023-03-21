@@ -828,7 +828,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -2577,10 +2577,12 @@ MonoBehaviour:
   rankC1: 0
   rankB1: 0
   rankA1: 0
+  rankS1: 0
   rankD2: 0
   rankC2: 0
   rankB2: 0
   rankA2: 0
+  rankS2: 0
 --- !u!1 &680214978
 GameObject:
   m_ObjectHideFlags: 0
@@ -5121,7 +5123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594740954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.99, y: -1.52, z: -1.0213898}
+  m_LocalPosition: {x: 43.67, y: -1.52, z: -1.0213898}
   m_LocalScale: {x: 0.25754, y: 0.25754, z: 0.25754}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5362,7 +5364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theMusic: {fileID: 175214663}
-  startPlaying: 0
+  startPlaying: 1
   theBS: {fileID: 389834190}
 --- !u!4 &1700438716
 Transform:
