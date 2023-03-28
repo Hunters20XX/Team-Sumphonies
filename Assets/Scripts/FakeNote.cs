@@ -8,7 +8,7 @@ public class FakeNote : MonoBehaviour
 
     public KeyCode keyToPress;
     public KeyCode keyToPress2;
-    public bool dead;
+    public bool fail;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class FakeNote : MonoBehaviour
                 gameObject.SetActive(false);
                 GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
                 GameObject.Find("Button1").GetComponent<Score>().hit = 0;
-                //dead = true;
+                fail = true;
             }
         }
 
@@ -37,7 +37,7 @@ public class FakeNote : MonoBehaviour
                 gameObject.SetActive(false);
                 GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
                 GameObject.Find("Button1").GetComponent<Score>().hit = 0;
-                //dead = true;
+                fail = true;
             }
         }
     }
@@ -60,11 +60,11 @@ public class FakeNote : MonoBehaviour
 
     void OnEnable()
     {
-        dead = false;
+        fail = false;
     }
 
     void OnDisable()
     {
-        dead = true;
+        fail = true;
     }
 }

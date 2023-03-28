@@ -10,12 +10,15 @@ public class RapidNote : MonoBehaviour
     public KeyCode keyToPress;
     public KeyCode keyToPress2;
     public float threshold;
-    public bool dead;
     public float beatTempo;
     public bool moving;
     public float time;
     public bool timer;
-    
+    public bool fail;
+    public bool nice;
+    public bool great;
+    public bool perfect;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,18 +35,47 @@ public class RapidNote : MonoBehaviour
         {
             transform.position -= new Vector3(beatTempo * Time.deltaTime, 0f, 0f);
         }
-        
+        if (transform.position.x <= 0f)
+        {
+            {
+                nice = true;
+            }
+        }
+        if (transform.position.x <= -1.6f)
+        {
+            {
+                great = true;
+                nice = false;
+            }
+        }
+        if (transform.position.x <= -3.2f)
+        {
+            {
+                perfect = true;
+                great = false;
+            }
+        }
+        if (transform.position.x <= -4.8f)
+        {
+            {
+                great = true;
+                perfect = false;
+            }
+        }
+        if (transform.position.x <= -6.4f)
+        {
+            {
+                nice = true;
+                great = false;
+            }
+        }
 
         if (Input.GetKeyDown(keyToPress))
         {
-            if (canBePressed)
+            if (canBePressed && nice == true)
             {
                 moving = false;
-
                 timer = true;
-
-                //gameObject.SetActive(false);
-
                 if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 1)
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim++;
@@ -74,19 +106,93 @@ public class RapidNote : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                     GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 6;
                 }
-                GameObject.Find("Button1").GetComponent<Score>().hit++;
-                GameObject.Find("vampire_neutral").GetComponent<Timer>().hits++;
+                Debug.Log("Nice");
             }
+
+            if (canBePressed && great == true)
+            {
+                moving = false;
+                timer = true;
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 1)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 2;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 2;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 2)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 4;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 4;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 3)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 6;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 6;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 4)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 8;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 8;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 5)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 10;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 10;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 12;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 12;
+                }
+                Debug.Log("Great");
+            }
+
+            if (canBePressed && perfect == true)
+            {
+                moving = false;
+                timer = true;
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 1)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 3;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 3;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 2)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 6;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 6;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 3)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 9;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 9;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 4)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 12;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 12;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 5)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 15;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 15;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 18;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 18;
+                }
+                Debug.Log("Perfect");
+            }
+
+            GameObject.Find("Button1").GetComponent<Score>().hit++;
+            GameObject.Find("vampire_neutral").GetComponent<Timer>().hits++;           
         }
 
         if (Input.GetKeyDown(keyToPress2))
         {
-            if (canBePressed)
+            if (canBePressed && nice == true)
             {
                 moving = false;
-
                 timer = true;
-
                 if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 1)
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim++;
@@ -117,16 +223,93 @@ public class RapidNote : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                     GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 6;
                 }
-                GameObject.Find("Button1").GetComponent<Score>().hit++;
-                GameObject.Find("vampire_neutral").GetComponent<Timer>().hits++;
+                Debug.Log("Nice");
             }
+
+            if (canBePressed && great == true)
+            {
+                moving = false;
+                timer = true;
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 1)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 2;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 2;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 2)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 4;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 4;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 3)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 6;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 6;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 4)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 8;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 8;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 5)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 10;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 10;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 12;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 12;
+                }
+                Debug.Log("Great");
+            }
+
+            if (canBePressed && perfect == true)
+            {
+                moving = false;
+                timer = true;
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 1)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 3;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 3;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 2)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 6;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 6;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 3)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 9;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 9;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 4)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 12;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 12;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 5)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 15;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 15;
+                }
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().victim += 18;
+                    GameObject.Find("vampire_neutral").GetComponent<Timer>().score += 18;
+                }
+                Debug.Log("Perfect");
+            }
+
+            GameObject.Find("Button1").GetComponent<Score>().hit++;
+            GameObject.Find("vampire_neutral").GetComponent<Timer>().hits++;        
         }
 
-        if (transform.position.x < threshold && dead == false)
+        if (transform.position.x < threshold && fail == false)
         {
             GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
             GameObject.Find("Button1").GetComponent<Score>().hit = 0;
-            //dead = true;
+            fail = true;
+            nice = false;
         }
 
         if(timer)
@@ -158,11 +341,11 @@ public class RapidNote : MonoBehaviour
 
     void OnEnable()
     {
-        dead = false;
+        fail = false;
     }
 
     void OnDisable()
     {
-        dead = true;
+        fail = true;
     }
 }
