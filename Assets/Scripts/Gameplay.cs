@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using TMPro;
 
-public class Timer : MonoBehaviour
+public class Gameplay : MonoBehaviour
 {
     public float timeRemaining = 0;
     public bool timerIsRunning = false;
     public TMP_Text timeText;
     public GameObject results;
+    public GameObject pauseText;
     public TMP_Text hitsText;
     public TMP_Text scoreText;
     public TMP_Text rankhitText;
@@ -27,6 +30,9 @@ public class Timer : MonoBehaviour
     public bool rankB2;
     public bool rankA2;
     public bool rankS2;
+
+    public bool pause = false;
+    public bool end = false;
 
 
     void Start()
@@ -49,6 +55,7 @@ public class Timer : MonoBehaviour
             else if (timeRemaining <= 1)
             {
                 results.SetActive(true);
+                end = true;
                 timerIsRunning = false;
                 Time.timeScale = 0;
                 hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes + " = ";
@@ -103,7 +110,30 @@ public class Timer : MonoBehaviour
                 {
                     rankscoreText.text = "S";
                 }
-            }
+            }          
+        }
+
+        Keyboard kb = InputSystem.GetDevice<Keyboard>();
+        if (kb.rKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene("Level 1");
+            Time.timeScale = 1.0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            pause = !pause;
+            //more code here
+        }
+        if (pause == true && end == false)
+        {
+            Time.timeScale = 0.0f;
+            pauseText.SetActive(true);
+        }
+        else if (pause == false && end == false)
+        {
+            Time.timeScale = 1.0f;
+            pauseText.SetActive(false);
         }
 
         if (hits > totalNotes * 0.2)
