@@ -143,6 +143,7 @@ public class RapidNote : MonoBehaviour
         {
             GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
             GameObject.Find("Button1").GetComponent<Score>().hit = 0;
+            GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;
             fail = true;
         }
 

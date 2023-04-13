@@ -113,12 +113,6 @@ public class Gameplay : MonoBehaviour
             }          
         }
 
-        Keyboard kb = InputSystem.GetDevice<Keyboard>();
-        if (kb.rKey.wasPressedThisFrame)
-        {
-            SceneManager.LoadScene("Level 1");
-            Time.timeScale = 1.0f;
-        }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
