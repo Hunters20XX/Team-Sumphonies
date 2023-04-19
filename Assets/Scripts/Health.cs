@@ -5,7 +5,7 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
-    public int heart = 3;
+    public int heart;
     public TMP_Text healthText;
     public GameObject theEnd;
 

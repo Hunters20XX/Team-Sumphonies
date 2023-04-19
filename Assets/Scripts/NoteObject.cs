@@ -23,13 +23,13 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < -2)
+        if (transform.position.x < -2.6)
         {
             {
                 nice = true;
             }
         }
-        if (transform.position.x < -2.6)
+        if (transform.position.x < -2.9)
         {
             {
                 great = true;
@@ -43,14 +43,14 @@ public class NoteObject : MonoBehaviour
                 great = false;
             }
         }
-        if (transform.position.x < -4.2)
+        if (transform.position.x < -3.5)
         {
             {
                 great = true;
                 perfect = false;
             }
         }
-        if (transform.position.x < -4.8)
+        if (transform.position.x < -3.8)
         {
             {
                 nice = true;
@@ -87,7 +87,7 @@ public class NoteObject : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 5;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 5;
                 }
-                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6) 
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 6;

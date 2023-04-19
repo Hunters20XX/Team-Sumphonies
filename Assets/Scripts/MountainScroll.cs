@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundScroll : MonoBehaviour
+public class MountainScroll : MonoBehaviour
 {
 
     public float threshold;
@@ -20,7 +20,7 @@ public class BackgroundScroll : MonoBehaviour
 
         if (transform.position.x < threshold)
         {
-            transform.position = new Vector3(29f, -0.71f, 0);
+            transform.position = new Vector3(29f, -0.84f, 0);
         }
     }
 }

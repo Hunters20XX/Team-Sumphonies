@@ -1,37 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public AudioSource theMusic;
 
-    public bool startPlaying;
-
     public BeatScroller theBS;
 
-
+    Gameplay game;
 
     // Start is called before the first frame update
     void Start()
     {
+        game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
+
         theMusic.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
-        /*if(!startPlaying)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if(Input.anyKeyDown)
+            if (game.pause == true)
             {
-                startPlaying = true;
-                theBS.hasStarted = true;
+                theMusic.Pause();
+            }
 
+            if (game.pause == false)
+            {
                 theMusic.Play();
             }
-        }*/
+        }
+        
     }
 }

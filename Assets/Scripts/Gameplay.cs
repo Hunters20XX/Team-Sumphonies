@@ -37,10 +37,12 @@ public class Gameplay : MonoBehaviour
 
     void Start()
     {
+
         timerIsRunning = true;
         hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes + " = ";
         scoreText.text = "Total Score: " + score.ToString() + " / " + totalScore + " = ";
         results.SetActive(false);
+
     }
 
     void Update()
@@ -117,6 +119,7 @@ public class Gameplay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             pause = !pause;
+
             //more code here
         }
         if (pause == true && end == false)

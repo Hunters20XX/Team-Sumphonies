@@ -11,33 +11,42 @@ public class Player : MonoBehaviour
     public KeyCode keyToPress;
     public KeyCode keyToPress2;
 
+    Gameplay game;
+
     // Start is called before the first frame update
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
+
+        game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyToPress))
-        {
-            theSR.sprite = pressedImage;
-        }
 
-        if (Input.GetKeyUp(keyToPress))
+        if(game.pause == false)
         {
-            theSR.sprite = defaultImage;
-        }
+            if (Input.GetKeyDown(keyToPress))
+            {
+                theSR.sprite = pressedImage;
+            }
 
-        if (Input.GetKeyDown(keyToPress2))
-        {
-            theSR.sprite = pressedImage;
-        }
+            if (Input.GetKeyUp(keyToPress))
+            {
+                theSR.sprite = defaultImage;
+            }
 
-        if (Input.GetKeyUp(keyToPress2))
-        {
-            theSR.sprite = defaultImage;
+            if (Input.GetKeyDown(keyToPress2))
+            {
+                theSR.sprite = pressedImage;
+            }
+
+            if (Input.GetKeyUp(keyToPress2))
+            {
+                theSR.sprite = defaultImage;
+            }
         }
+       
     }
 }
