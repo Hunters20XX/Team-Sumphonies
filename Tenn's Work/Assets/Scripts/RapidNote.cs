@@ -15,6 +15,7 @@ public class RapidNote : MonoBehaviour
     public bool moving;
     public float time;
     public bool timer;
+    public bool firsthit = false;
     FrenzyMode frenzy;
 
 
@@ -35,6 +36,8 @@ public class RapidNote : MonoBehaviour
             transform.position -= new Vector3(beatTempo * Time.deltaTime, 0f, 0f);
         }
 
+        
+
 
         if (Input.GetKeyDown(keyToPress))
         {
@@ -43,6 +46,15 @@ public class RapidNote : MonoBehaviour
                 moving = false;
 
                 timer = true;
+
+                if(firsthit == false)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().hit++;
+                    GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
+
+                    firsthit = true;
+                    
+                }
 
                 //gameObject.SetActive(false);
 
@@ -76,8 +88,7 @@ public class RapidNote : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 6;
                 }
-                GameObject.Find("Button1").GetComponent<Score>().hit++;
-                GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
+
             }
         }
 
@@ -128,7 +139,7 @@ public class RapidNote : MonoBehaviour
         {
             GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
             GameObject.Find("Button1").GetComponent<Score>().hit = 0;
-            GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;
+            GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 3;
             frenzy.hitsInARow = 0;
             dead = true;
         }

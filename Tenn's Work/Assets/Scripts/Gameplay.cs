@@ -60,9 +60,10 @@ public class Gameplay : MonoBehaviour
                 end = true;
                 timerIsRunning = false;
                 Time.timeScale = 0;
-                hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes + " = ";
-                scoreText.text = "Total Score: " + score.ToString() + " / " + totalScore + " = ";
+                hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes;
+                scoreText.text = "Total Score: " + score.ToString();
 
+                /*
                 if (rankD1 == false)
                 {
                     rankhitText.text = "Fail";
@@ -111,7 +112,7 @@ public class Gameplay : MonoBehaviour
                 if (rankS2 == true)
                 {
                     rankscoreText.text = "S";
-                }
+                }*/
             }          
         }
 

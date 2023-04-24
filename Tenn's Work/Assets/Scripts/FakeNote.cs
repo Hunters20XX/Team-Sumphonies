@@ -27,7 +27,7 @@ public class FakeNote : MonoBehaviour
                 GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
                 GameObject.Find("Button1").GetComponent<Score>().hit = 0;
                 fail = true;
-                GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 1;
+                GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;
             }
         }
 
@@ -39,7 +39,7 @@ public class FakeNote : MonoBehaviour
                 GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
                 GameObject.Find("Button1").GetComponent<Score>().hit = 0;
                 fail = true;
-                GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 1;
+                GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;
             }
         }
     }

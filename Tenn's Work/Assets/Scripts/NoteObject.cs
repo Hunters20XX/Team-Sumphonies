@@ -93,7 +93,7 @@ public class NoteObject : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 5;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 5;
                 }
-                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6) 
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6) 
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 6;
@@ -126,7 +126,7 @@ public class NoteObject : MonoBehaviour
                         GameObject.Find("Button1").GetComponent<Score>().victim += 5;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 5;
                     }
-                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                     {
                         GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 6;
@@ -167,7 +167,7 @@ public class NoteObject : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 10;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 10;
                 }
-                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim += 12;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 12;
@@ -200,7 +200,7 @@ public class NoteObject : MonoBehaviour
                         GameObject.Find("Button1").GetComponent<Score>().victim += 10;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 10;
                     }
-                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                     {
                         GameObject.Find("Button1").GetComponent<Score>().victim += 12;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 12;
@@ -241,7 +241,7 @@ public class NoteObject : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 15;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 15;
                 }
-                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim += 18;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 18;
@@ -274,7 +274,7 @@ public class NoteObject : MonoBehaviour
                         GameObject.Find("Button1").GetComponent<Score>().victim += 15;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 15;
                     }
-                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                     {
                         GameObject.Find("Button1").GetComponent<Score>().victim += 18;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 18;
@@ -320,7 +320,7 @@ public class NoteObject : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 5;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 5;
                 }
-                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 6;
@@ -353,7 +353,7 @@ public class NoteObject : MonoBehaviour
                         GameObject.Find("Button1").GetComponent<Score>().victim += 5;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 5;
                     }
-                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                     {
                         GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 6;
@@ -395,7 +395,7 @@ public class NoteObject : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 10;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 10;
                 }
-                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim += 12;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 12;
@@ -428,7 +428,7 @@ public class NoteObject : MonoBehaviour
                         GameObject.Find("Button1").GetComponent<Score>().victim += 10;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 10;
                     }
-                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                     {
                         GameObject.Find("Button1").GetComponent<Score>().victim += 12;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 12;
@@ -470,7 +470,7 @@ public class NoteObject : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 15;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 15;
                 }
-                if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                if (GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim += 18;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 18;
@@ -503,7 +503,7 @@ public class NoteObject : MonoBehaviour
                         GameObject.Find("Button1").GetComponent<Score>().victim += 15;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 15;
                     }
-                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier == 6)
+                    if(GameObject.Find("Button1").GetComponent<Score>().multiplier >= 6)
                     {
                         GameObject.Find("Button1").GetComponent<Score>().victim += 18;
                         GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 18;
