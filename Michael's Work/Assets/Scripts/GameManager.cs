@@ -22,18 +22,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == true)
         {
-            if (game.pause == true)
-            {
-                theMusic.Pause();
-            }
-
-            if (game.pause == false)
-            {
-                theMusic.Play();
-            }
+            theMusic.Pause();
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == false)
+        {
+            theMusic.Play();
+        }
     }
 }

@@ -39,8 +39,8 @@ public class Gameplay : MonoBehaviour
     {
 
         timerIsRunning = true;
-        hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes;
-        scoreText.text = "Total Score: " + score.ToString() + " / " + totalScore;
+        hitsText.text = "Hits: " + hits.ToString() + " / " + totalNotes;
+        scoreText.text = "Score: " + score.ToString();
         results.SetActive(false);
 
     }
@@ -61,7 +61,7 @@ public class Gameplay : MonoBehaviour
                 timerIsRunning = false;
                 Time.timeScale = 0;
                 hitsText.text = "Hits: " + hits.ToString() + " / " + totalNotes;
-                scoreText.text = "Score: " + score.ToString() + " / " + totalScore;
+                scoreText.text = "Score: " + score.ToString();
 
                 
                 if (rankD1 == false)
