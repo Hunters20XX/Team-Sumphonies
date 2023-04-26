@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        game = GameObject.Find("2nd Camera").GetComponent<Gameplay>();
+        game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
 
         theMusic.Play();
     }

@@ -20,38 +20,33 @@ public class ButtonController : MonoBehaviour
     {
         theSR = GetComponent<SpriteRenderer>();
 
-        game = GameObject.Find("2nd Camera").GetComponent<Gameplay>();
+        game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (game.pause == false)
+        if (game.pause == false && game.end == false)
         {
-            if (Input.GetKeyDown(keyToPress) || Input.GetKeyDown(keyToPress2))
+            if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
             {
                 theSR.sprite = pressedImage;
-                hold = true;
             }
             if (Input.GetKeyUp(keyToPress) || Input.GetKeyUp(keyToPress2))
             {
                 theSR.sprite = defaultImage;
-                hold = false;
             }
-            if (Input.GetKeyDown(keyToPress) && Input.GetKeyDown(keyToPress2))
+            if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
             {
                 theSR.sprite = pressedImage;
-                hold = true;
             }
             if (Input.GetKeyUp(keyToPress) && Input.GetKeyUp(keyToPress2))
             {
                 theSR.sprite = defaultImage;
-                hold = false;
             }
-
         }
 
-        if (game.pause)
+        if (game.pause && game.end == false)
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
@@ -65,7 +60,21 @@ public class ButtonController : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(keyToPress) || Input.GetKeyDown(keyToPress2))
+        if (game.pause == false && game.end == false)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (hold == false)
+                {
+                    theSR.sprite = defaultImage;
+                }
+                if (hold == true)
+                {
+                    theSR.sprite = pressedImage;
+                }
+            }
+        }
+        if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
         {
             hold = true;
         }
@@ -73,7 +82,7 @@ public class ButtonController : MonoBehaviour
         {
             hold = false;
         }
-        if (Input.GetKeyDown(keyToPress) && Input.GetKeyDown(keyToPress2))
+        if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
         {
             hold = true;
         }

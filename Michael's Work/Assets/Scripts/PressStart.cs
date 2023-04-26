@@ -11,13 +11,12 @@ public class PressStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startText.SetActive(true);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-   
-            startText.SetActive(true);
+        startText.SetActive(true);
     }
 }

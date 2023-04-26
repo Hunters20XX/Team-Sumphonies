@@ -14,8 +14,8 @@ public class Gameplay : MonoBehaviour
     public GameObject pauseText;
     public TMP_Text hitsText;
     public TMP_Text scoreText;
-    public TMP_Text rankhitText;
-    public TMP_Text rankscoreText;
+    public TMP_Text rankHitText;
+    public TMP_Text rankScoreText;
     public int hits;
     public int score;
     public int totalNotes;
@@ -39,8 +39,8 @@ public class Gameplay : MonoBehaviour
     {
 
         timerIsRunning = true;
-        hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes + " = ";
-        scoreText.text = "Total Score: " + score.ToString() + " / " + totalScore + " = ";
+        hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes;
+        scoreText.text = "Total Score: " + score.ToString() + " / " + totalScore;
         results.SetActive(false);
 
     }
@@ -60,57 +60,58 @@ public class Gameplay : MonoBehaviour
                 end = true;
                 timerIsRunning = false;
                 Time.timeScale = 0;
-                hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes + " = ";
-                scoreText.text = "Total Score: " + score.ToString() + " / " + totalScore + " = ";
+                hitsText.text = "Hits: " + hits.ToString() + " / " + totalNotes;
+                scoreText.text = "Score: " + score.ToString() + " / " + totalScore;
 
+                
                 if (rankD1 == false)
                 {
-                    rankhitText.text = "Fail";
+                    rankHitText.text = "= Fail";
                 }
                 if (rankD2 == false)
                 {
-                    rankscoreText.text = "Fail";
+                    rankScoreText.text = "= Fail";
                 }
                 if (rankD1 == true)
                 {
-                    rankhitText.text = "D";
+                    rankHitText.text = "= D";
                 }
                 if (rankD2 == true)
                 {
-                    rankscoreText.text = "D";
+                    rankScoreText.text = "= D";
                 }
                 if (rankC1 == true)
                 {
-                    rankhitText.text = "C";
+                    rankHitText.text = "= C";
                 }
                 if (rankC2 == true)
                 {
-                    rankscoreText.text = "C";
+                    rankScoreText.text = "= C";
                 }
                 if (rankB1 == true)
                 {
-                    rankhitText.text = "B";
+                    rankHitText.text = "= B";
                 }
                 if (rankB2 == true)
                 {
-                    rankscoreText.text = "B";
+                    rankScoreText.text = "= B";
                 }
                 if (rankA1 == true)
                 {
-                    rankhitText.text = "A";
+                    rankHitText.text = "= A";
                 }
                 if (rankA2 == true)
                 {
-                    rankscoreText.text = "A";
+                    rankScoreText.text = "= A";
 
                 }
                 if (rankS1 == true)
                 {
-                    rankhitText.text = "S";
+                    rankHitText.text = "= S";
                 }
                 if (rankS2 == true)
                 {
-                    rankscoreText.text = "S";
+                    rankScoreText.text = "= S";
                 }
             }          
         }

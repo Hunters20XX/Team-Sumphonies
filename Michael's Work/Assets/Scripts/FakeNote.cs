@@ -9,39 +9,43 @@ public class FakeNote : MonoBehaviour
     public KeyCode keyToPress;
     public KeyCode keyToPress2;
     public bool fail;
+    Gameplay game;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyToPress))
+        if (game.pause == false)
         {
-            if (canBePressed)
+            if (Input.GetKeyDown(keyToPress))
             {
-                gameObject.SetActive(false);
-                GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
-                GameObject.Find("Button1").GetComponent<Score>().hit = 0;
-                fail = true;
-                GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 1;
+                if (canBePressed)
+                {
+                    gameObject.SetActive(false);
+                    GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
+                    GameObject.Find("Button1").GetComponent<Score>().hit = 0;
+                    fail = true;
+                    GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;
+                }
             }
-        }
 
-        if (Input.GetKeyDown(keyToPress2))
-        {
-            if (canBePressed)
+            if (Input.GetKeyDown(keyToPress2))
             {
-                gameObject.SetActive(false);
-                GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
-                GameObject.Find("Button1").GetComponent<Score>().hit = 0;
-                fail = true;
-                GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 1;
+                if (canBePressed)
+                {
+                    gameObject.SetActive(false);
+                    GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
+                    GameObject.Find("Button1").GetComponent<Score>().hit = 0;
+                    fail = true;
+                    GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;
+                }
             }
-        }
+        }        
     }
 
     void OnTriggerEnter2D(Collider2D other)
