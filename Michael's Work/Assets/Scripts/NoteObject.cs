@@ -516,7 +516,7 @@ public class NoteObject : MonoBehaviour
 
             if (transform.position.x < threshold && fail == false)
             {
-                GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
+                GameObject.Find("Button1").GetComponent<Score>().multiplier -= 1;
                 GameObject.Find("Button1").GetComponent<Score>().hit = 0;
                 fail = true;
                 frenzy.hitsInARow = 0;

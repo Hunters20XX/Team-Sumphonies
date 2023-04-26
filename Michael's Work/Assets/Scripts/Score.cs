@@ -29,6 +29,15 @@ public class Score : MonoBehaviour
             multiplier++;
             conhit += hitInterval;
         }
+
+        if (multiplier >= 6)
+        {
+            multiplier = 6;
+        }
+        if (multiplier <= 1)
+        {
+            multiplier = 1;
+        }
         SetScoreText();
         SetMultiplierText();
     }

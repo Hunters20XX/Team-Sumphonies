@@ -27,7 +27,7 @@ public class FakeNote : MonoBehaviour
                 if (canBePressed)
                 {
                     gameObject.SetActive(false);
-                    GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
+                    GameObject.Find("Button1").GetComponent<Score>().multiplier -= 2;
                     GameObject.Find("Button1").GetComponent<Score>().hit = 0;
                     fail = true;
                     GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;
@@ -39,7 +39,7 @@ public class FakeNote : MonoBehaviour
                 if (canBePressed)
                 {
                     gameObject.SetActive(false);
-                    GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
+                    GameObject.Find("Button1").GetComponent<Score>().multiplier -= 2;
                     GameObject.Find("Button1").GetComponent<Score>().hit = 0;
                     fail = true;
                     GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;

@@ -25,6 +25,8 @@ public class Health : MonoBehaviour
             GameObject.Find("vampire_neutral").GetComponent<Gameplay>().end = true;
             theEnd.SetActive(true);
             Time.timeScale = 0;
+            heart = 0;
+            GameObject.Find("Game Manager").GetComponent<Song>().theMusic.Pause();
         }
     }
 }

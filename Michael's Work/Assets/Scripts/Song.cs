@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Song : MonoBehaviour
 {
     public AudioSource theMusic;
 
@@ -22,14 +21,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == true)
+        if (game.end == false)
         {
-            theMusic.Pause();
-        }
+            if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == false)
+            {
+                theMusic.Pause();
+            }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == false)
-        {
-            theMusic.Play();
+            if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == true)
+            {
+                theMusic.Play();
+            }
         }
     }
 }
