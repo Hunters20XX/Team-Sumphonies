@@ -9,14 +9,12 @@ public class Score : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text multiplierText;
     public int multiplier = 1;
-    int conhit;
     public int hit = 0;
     const int hitInterval = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        conhit = hitInterval;
         SetScoreText();
         SetMultiplierText();
     }
@@ -24,10 +22,10 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hit >= conhit)
+        if (hit >= hitInterval)
         {
             multiplier++;
-            conhit += hitInterval;
+            hit = 0;
         }
 
         if (multiplier >= 6)

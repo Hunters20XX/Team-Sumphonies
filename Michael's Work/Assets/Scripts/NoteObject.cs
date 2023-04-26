@@ -53,7 +53,7 @@ public class NoteObject : MonoBehaviour
                 great = false;
         }
 
-        if (game.pause == false)
+        if (game.pause == false && game.end == false)
         {
             if (Input.GetKeyDown(keyToPress))
             {

@@ -13,9 +13,8 @@ public class Song : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
-
         theMusic.Play();
+        game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
     }
 
     // Update is called once per frame
@@ -23,15 +22,22 @@ public class Song : MonoBehaviour
     {
         if (game.end == false)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == false)
-            {
-                theMusic.Pause();
-            }
-
             if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == true)
             {
-                theMusic.Play();
+                theMusic.Pause();
+                AudioListener.pause = true;
             }
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == false)
+            {
+                theMusic.Play();
+                AudioListener.pause = false;
+            }
+        }
+        if (game.end == true)
+        {
+            theMusic.Pause();
+            AudioListener.pause = true;
         }
     }
 }

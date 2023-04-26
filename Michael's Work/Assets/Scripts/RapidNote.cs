@@ -38,7 +38,7 @@ public class RapidNote : MonoBehaviour
             transform.position -= new Vector3(beatTempo * Time.deltaTime, 0f, 0f);
         }
 
-        if (game.pause == false)
+        if (game.pause == false && game.end == false)
         {
             if (Input.GetKeyDown(keyToPress))
             {

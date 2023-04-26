@@ -20,7 +20,7 @@ public class FakeNote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (game.pause == false)
+        if (game.pause == false && game.end == false)
         {
             if (Input.GetKeyDown(keyToPress))
             {
