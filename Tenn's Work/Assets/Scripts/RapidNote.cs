@@ -100,6 +100,15 @@ public class RapidNote : MonoBehaviour
 
                 timer = true;
 
+                if (firsthit == false)
+                {
+                    GameObject.Find("Button1").GetComponent<Score>().hit++;
+                    GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
+
+                    firsthit = true;
+
+                }
+
                 if (GameObject.Find("Button1").GetComponent<Score>().multiplier == 1)
                 {
                     GameObject.Find("Button1").GetComponent<Score>().victim++;
@@ -130,8 +139,6 @@ public class RapidNote : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 6;
                 }
-                GameObject.Find("Button1").GetComponent<Score>().hit++;
-                GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
             }
         }
 
