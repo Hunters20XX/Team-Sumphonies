@@ -27,11 +27,11 @@ public class ButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
+        if (Input.GetKeyDown(keyToPress) || Input.GetKeyDown(keyToPress2))
         {
             hold = true;
         }
-        if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
+        if (Input.GetKeyDown(keyToPress) && Input.GetKeyDown(keyToPress2))
         {
             hold = true;
         }
@@ -44,32 +44,35 @@ public class ButtonController : MonoBehaviour
             hold = false;
         }
 
-        if (game.pause == false && game.end == false)
+        if (game.end == false)
         {
-            if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
+            if (game.pause == false)
             {
-                theSR.sprite = pressedImage;
-            }
-            if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
-            {
-                theSR.sprite = pressedImage;
-            }
-            if (Input.GetKeyUp(keyToPress) || Input.GetKeyUp(keyToPress2))
-            {
-                theSR.sprite = defaultImage;
-            }
-            if (Input.GetKeyUp(keyToPress) && Input.GetKeyUp(keyToPress2))
-            {
-                theSR.sprite = defaultImage;
+                if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
+                {
+                    theSR.sprite = pressedImage;
+                }
+                if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
+                {
+                    theSR.sprite = pressedImage;
+                }
+                if (Input.GetKeyUp(keyToPress) || Input.GetKeyUp(keyToPress2))
+                {
+                    theSR.sprite = defaultImage;
+                }
+                if (Input.GetKeyUp(keyToPress) && Input.GetKeyUp(keyToPress2))
+                {
+                    theSR.sprite = defaultImage;
+                }
+
             }
 
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause)
-        {
-            if (hold == false)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == false)
             {
-                theSR.sprite = defaultImage;
+                if (hold == false)
+                {
+                    theSR.sprite = defaultImage;
+                }
             }
         }
     }
