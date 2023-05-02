@@ -745,7 +745,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 25aabf1c1f0c05844a881e27220516d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -766,7 +766,7 @@ Transform:
   m_GameObject: {fileID: 58011246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.03, y: -0.04, z: 0}
-  m_LocalScale: {x: 1.12, y: 0.97, z: 1}
+  m_LocalScale: {x: 0.95311683, y: 0.9699603, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3926,7 +3926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 297.8, y: 140}
+  m_AnchoredPosition: {x: 250, y: 140}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396902550
@@ -6850,10 +6850,10 @@ GameObject:
   m_Component:
   - component: {fileID: 668468454}
   - component: {fileID: 668468453}
-  - component: {fileID: 668468455}
   - component: {fileID: 668468458}
   - component: {fileID: 668468459}
   - component: {fileID: 668468460}
+  - component: {fileID: 668468461}
   m_Layer: 0
   m_Name: vampire_neutral
   m_TagString: Untagged
@@ -6928,22 +6928,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &668468455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668468452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe07a71808b81448be553938583e46a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultImage: {fileID: 21300000, guid: 34541b191382f9043a3006d0a23ab192, type: 3}
-  pressedImage: {fileID: 21300000, guid: 52d17cd7151d0ea439e31f419c119e32, type: 3}
-  keyToPress: 122
-  keyToPress2: 120
 --- !u!114 &668468458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6978,22 +6962,11 @@ MonoBehaviour:
   pauseText: {fileID: 646992746}
   hitsText: {fileID: 537217307}
   scoreText: {fileID: 1030204976}
-  rankhitText: {fileID: 0}
-  rankscoreText: {fileID: 0}
   hits: 0
   score: 0
   totalNotes: 127
   totalScore: 64
-  rankD1: 0
-  rankC1: 0
-  rankB1: 0
-  rankA1: 0
-  rankS1: 0
-  rankD2: 0
-  rankC2: 0
-  rankB2: 0
-  rankA2: 0
-  rankS2: 0
+  pause: 0
   end: 0
 --- !u!114 &668468460
 MonoBehaviour:
@@ -7010,6 +6983,23 @@ MonoBehaviour:
   hitsInARow: 0
   frenzyLine: 20
   frenzyMode: 0
+--- !u!114 &668468461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668468452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68e410cce732884e9bd0fe3e7f9bba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultImage: {fileID: 21300000, guid: 34541b191382f9043a3006d0a23ab192, type: 3}
+  pressedImage: {fileID: 21300000, guid: 52d17cd7151d0ea439e31f419c119e32, type: 3}
+  keyToPress: 122
+  keyToPress2: 120
+  hold: 0
 --- !u!1 &672941550
 GameObject:
   m_ObjectHideFlags: 0
@@ -9941,22 +9931,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5104419126085986264, guid: 293fd02a2f3675a49b8038560ced907a, type: 3}
   m_PrefabInstance: {fileID: 5104419126337644393}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &822083764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822083761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a68e410cce732884e9bd0fe3e7f9bba5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultImage: {fileID: 21300000, guid: d59e50da89c726946871bb2a64b5ee35, type: 3}
-  pressedImage: {fileID: 21300000, guid: 02cb0dc1e23295647aa2a15a4ec9e345, type: 3}
-  keyToPress: 122
-  keyToPress2: 120
 --- !u!50 &822083766
 Rigidbody2D:
   serializedVersion: 4
@@ -10011,6 +9985,23 @@ MonoBehaviour:
   multiplierText: {fileID: 396902550}
   multiplier: 1
   hit: 0
+--- !u!114 &822083773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822083761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68e410cce732884e9bd0fe3e7f9bba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultImage: {fileID: 21300000, guid: d59e50da89c726946871bb2a64b5ee35, type: 3}
+  pressedImage: {fileID: 21300000, guid: 02cb0dc1e23295647aa2a15a4ec9e345, type: 3}
+  keyToPress: 122
+  keyToPress2: 120
+  hold: 0
 --- !u!1 &828583551
 GameObject:
   m_ObjectHideFlags: 0
@@ -12449,7 +12440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.6, y: 0}
+  m_AnchoredPosition: {x: 12, y: 0}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030204976
@@ -14478,7 +14469,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -14871,7 +14862,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1107885021
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 608cebf763d4cee4b9d8960516a97dd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17761,7 +17752,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1107885021
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 608cebf763d4cee4b9d8960516a97dd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -21642,7 +21633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -299.6, y: 140}
+  m_AnchoredPosition: {x: -250, y: 140}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766585212

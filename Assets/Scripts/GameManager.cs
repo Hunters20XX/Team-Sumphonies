@@ -9,12 +9,12 @@ public class GameManager : MonoBehaviour
 
     public BeatScroller theBS;
 
-    //Gameplay game;
+    Gameplay game;
 
     // Start is called before the first frame update
     void Start()
     {
-        //game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
+        game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
 
         theMusic.Play();
     }
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && game.end == false)
         {
             if (game.pause == true)
             {
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
             {
                 theMusic.Play();
             }
-        }*/
-        
+        }
+
     }
 }

@@ -61,7 +61,7 @@ public class NoteObject : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(keyToPress))
+        if (Input.GetKeyDown(keyToPress) && game.pause == false)
         {
             if (canBePressed && nice == true)
             {
@@ -288,7 +288,7 @@ public class NoteObject : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(keyToPress2))
+        if (Input.GetKeyDown(keyToPress2) && game.pause == false)
         {
             if (canBePressed && nice == true)
             {
@@ -520,7 +520,7 @@ public class NoteObject : MonoBehaviour
 
         if (transform.position.x < threshold && fail == false)
         {
-            GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
+            GameObject.Find("Button1").GetComponent<Score>().multiplier -= 1;
             GameObject.Find("Button1").GetComponent<Score>().hit = 0;
             fail = true;
             frenzy.hitsInARow = 0;

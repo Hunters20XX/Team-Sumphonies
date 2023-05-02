@@ -19,6 +19,7 @@ public class RapidNote : MonoBehaviour
     FrenzyMode frenzy;
     private SpriteRenderer theSR;
     public Sprite pressedImage;
+    Gameplay game;
 
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class RapidNote : MonoBehaviour
     {
         theSR = GetComponent<SpriteRenderer>();
         frenzy = GameObject.Find("vampire_neutral").GetComponent<FrenzyMode>();
+        game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
         beatTempo = beatTempo / 60f;
         moving = true;
         timer = false;
@@ -42,7 +44,7 @@ public class RapidNote : MonoBehaviour
         
 
 
-        if (Input.GetKeyDown(keyToPress))
+        if (Input.GetKeyDown(keyToPress) && game.pause == false)
         {
             if (canBePressed)
             {
@@ -97,7 +99,7 @@ public class RapidNote : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(keyToPress2))
+        if (Input.GetKeyDown(keyToPress2) && game.pause == false)
         {
             if (canBePressed)
             {
@@ -151,7 +153,7 @@ public class RapidNote : MonoBehaviour
 
         if (transform.position.x < threshold && dead == false)
         {
-            GameObject.Find("Button1").GetComponent<Score>().multiplier = 1;
+            GameObject.Find("Button1").GetComponent<Score>().multiplier -= 3;
             GameObject.Find("Button1").GetComponent<Score>().hit = 0;
             GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 3;
             frenzy.hitsInARow = 0;

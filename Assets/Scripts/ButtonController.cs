@@ -11,45 +11,66 @@ public class ButtonController : MonoBehaviour
     public KeyCode keyToPress;
     public KeyCode keyToPress2;
 
+    public bool hold = false;
+
     Gameplay game;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        theSR = GetComponent<SpriteRenderer>();
-
         game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
+        theSR = GetComponent<SpriteRenderer>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (game.end == false)
+        if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
         {
-            if (Input.GetKeyDown(keyToPress))
+            hold = true;
+        }
+        if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
+        {
+            hold = true;
+        }
+        if (Input.GetKeyUp(keyToPress) || Input.GetKeyUp(keyToPress2))
+        {
+            hold = false;
+        }
+        if (Input.GetKeyUp(keyToPress) && Input.GetKeyUp(keyToPress2))
+        {
+            hold = false;
+        }
+
+        if (game.pause == false && game.end == false)
+        {
+            if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
             {
                 theSR.sprite = pressedImage;
             }
-            
-            if (Input.GetKeyUp(keyToPress))
+            if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
+            {
+                theSR.sprite = pressedImage;
+            }
+            if (Input.GetKeyUp(keyToPress) || Input.GetKeyUp(keyToPress2))
             {
                 theSR.sprite = defaultImage;
             }
-
-            if (Input.GetKeyDown(keyToPress2))
-            {
-                theSR.sprite = pressedImage;
-            }
-
-            if (Input.GetKeyUp(keyToPress2))
+            if (Input.GetKeyUp(keyToPress) && Input.GetKeyUp(keyToPress2))
             {
                 theSR.sprite = defaultImage;
             }
 
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause)
+        {
+            if (hold == false)
+            {
+                theSR.sprite = defaultImage;
+            }
+        }
     }
 }

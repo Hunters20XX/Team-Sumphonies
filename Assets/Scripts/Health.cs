@@ -17,13 +17,14 @@ public class Health : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         healthText.text = "Health: " + heart.ToString();
         if (heart <= 0)
         {
             GameObject.Find("vampire_neutral").GetComponent<Gameplay>().end = true;
             theEnd.SetActive(true);
+            heart = 0;
             Time.timeScale = 0;
         }
     }

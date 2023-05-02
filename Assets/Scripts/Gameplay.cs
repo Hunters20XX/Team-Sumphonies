@@ -14,12 +14,15 @@ public class Gameplay : MonoBehaviour
     public GameObject pauseText;
     public TMP_Text hitsText;
     public TMP_Text scoreText;
+    /*
     public TMP_Text rankhitText;
     public TMP_Text rankscoreText;
+    */
     public int hits;
     public int score;
     public int totalNotes;
     public int totalScore;
+    /*
     public bool rankD1;
     public bool rankC1;
     public bool rankB1;
@@ -30,8 +33,9 @@ public class Gameplay : MonoBehaviour
     public bool rankB2;
     public bool rankA2;
     public bool rankS2;
+    */
 
-    //public bool pause = false;
+    public bool pause = false;
     public bool end = false;
 
 
@@ -117,7 +121,7 @@ public class Gameplay : MonoBehaviour
         }
 
 
-        /*if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             pause = !pause;
 
@@ -133,7 +137,7 @@ public class Gameplay : MonoBehaviour
             Time.timeScale = 1.0f;
             pauseText.SetActive(false);
         }
-        */
+        /*
         if (hits > totalNotes * 0.2)
         {
             rankD1 = true;
@@ -181,7 +185,7 @@ public class Gameplay : MonoBehaviour
         {
             rankS2 = true;
             rankA2 = false;
-        }
+        }*/
     }
 
     void DisplayTime(float timeToDisplay)
