@@ -37,6 +37,7 @@ public class Gameplay : MonoBehaviour
 
     public bool pause = false;
     public bool end = false;
+    public static float unscaledTime;
 
 
     void Start()
@@ -129,12 +130,12 @@ public class Gameplay : MonoBehaviour
         }
         if (pause == true && end == false)
         {
-            Time.timeScale = 0.0f;
+            Time.timeScale = 0;
             pauseText.SetActive(true);
         }
         else if (pause == false && end == false)
         {
-            Time.timeScale = 1.0f;
+            Time.timeScale = 1;
             pauseText.SetActive(false);
         }
         /*

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public BeatScroller theBS;
 
+    bool pausedMusic = false;
+
     Gameplay game;
 
     // Start is called before the first frame update
