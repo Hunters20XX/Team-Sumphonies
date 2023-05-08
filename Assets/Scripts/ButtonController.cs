@@ -7,11 +7,17 @@ public class ButtonController : MonoBehaviour
     private SpriteRenderer theSR;
     public Sprite defaultImage;
     public Sprite pressedImage;
+    public Sprite hurtImage;
+
+    public AudioSource hit;
+    public AudioSource grunt;
 
     public KeyCode keyToPress;
     public KeyCode keyToPress2;
 
     public bool hold = false;
+    public bool hurt = false;
+    public bool attack = false;
 
     Gameplay game;
 
@@ -21,6 +27,7 @@ public class ButtonController : MonoBehaviour
     {
         game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
         theSR = GetComponent<SpriteRenderer>();
+        
 
     }
 
@@ -51,6 +58,7 @@ public class ButtonController : MonoBehaviour
                 if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
                 {
                     theSR.sprite = pressedImage;
+                    
                 }
                 if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
                 {
@@ -73,6 +81,19 @@ public class ButtonController : MonoBehaviour
                 {
                     theSR.sprite = defaultImage;
                 }
+            }
+
+            if(hurt)
+            {
+                theSR.sprite = hurtImage;
+                hurt = false;
+                grunt.Play();
+            }
+
+            if(attack)
+            {
+                hit.Play();
+                attack = false;
             }
         }
     }
