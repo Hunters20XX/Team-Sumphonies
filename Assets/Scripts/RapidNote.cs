@@ -22,6 +22,7 @@ public class RapidNote : MonoBehaviour
     Gameplay game;
     ButtonController bc;
     public AudioSource swing;
+    public ParticleSystem blood;
 
 
     // Start is called before the first frame update
@@ -178,6 +179,7 @@ public class RapidNote : MonoBehaviour
         if (time < 0)
         {
             gameObject.SetActive(false);
+            blood.Play();
         }
     }
 

@@ -15,6 +15,7 @@ public class FakeNote : MonoBehaviour
     ButtonController bc;
 
     public AudioSource poof;
+    public ParticleSystem smoke;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class FakeNote : MonoBehaviour
                 frenzy.hitsInARow = 0;
                 bc.hurt = true;
                 poof.Play();
+                smoke.Play();
             }
         }
 
@@ -54,6 +56,7 @@ public class FakeNote : MonoBehaviour
                 frenzy.hitsInARow = 0;
                 bc.hurt = true;
                 poof.Play();
+                smoke.Play();
             }
         }
     }

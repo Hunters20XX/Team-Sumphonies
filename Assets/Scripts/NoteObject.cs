@@ -16,6 +16,7 @@ public class NoteObject : MonoBehaviour
     FrenzyMode frenzy;
     Gameplay game;
     ButtonController bc;
+    public ParticleSystem blood;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class NoteObject : MonoBehaviour
         frenzy = GameObject.Find("vampire_neutral").GetComponent<FrenzyMode>();
         game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
         bc = GameObject.Find("vampire_neutral").GetComponent<ButtonController>();
+
     }
 
     // Update is called once per frame
@@ -139,6 +141,7 @@ public class NoteObject : MonoBehaviour
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
                 bc.attack = true;
+                blood.Play();
             }
             if (canBePressed && great == true)
             {
@@ -214,6 +217,7 @@ public class NoteObject : MonoBehaviour
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
                 bc.attack = true;
+                blood.Play();
             }
             if (canBePressed && perfect == true)
             {
@@ -290,6 +294,7 @@ public class NoteObject : MonoBehaviour
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
                 bc.attack = true;
+                blood.Play();
             }
         }
 
@@ -370,6 +375,7 @@ public class NoteObject : MonoBehaviour
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
                 bc.attack = true;
+                blood.Play();
             }
             if (canBePressed && great == true)
             {
@@ -446,6 +452,7 @@ public class NoteObject : MonoBehaviour
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
                 bc.attack = true;
+                blood.Play();
             }
             if (canBePressed && perfect == true)
             {
@@ -523,6 +530,7 @@ public class NoteObject : MonoBehaviour
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
                 bc.attack = true;
+                blood.Play();
             }
         }
 
@@ -532,6 +540,7 @@ public class NoteObject : MonoBehaviour
             GameObject.Find("Button1").GetComponent<Score>().hit = 0;
             fail = true;
             frenzy.hitsInARow = 0;
+            
         }
     }
 
