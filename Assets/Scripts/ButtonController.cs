@@ -34,11 +34,11 @@ public class ButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyToPress) || Input.GetKeyDown(keyToPress2))
+        if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
         {
             hold = true;
         }
-        if (Input.GetKeyDown(keyToPress) && Input.GetKeyDown(keyToPress2))
+        if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
         {
             hold = true;
         }
@@ -57,8 +57,7 @@ public class ButtonController : MonoBehaviour
             {
                 if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
                 {
-                    theSR.sprite = pressedImage;
-                    
+                    theSR.sprite = pressedImage;                
                 }
                 if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
                 {
@@ -75,13 +74,15 @@ public class ButtonController : MonoBehaviour
 
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == false)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == true)
             {
                 if (hold == false)
                 {
                     theSR.sprite = defaultImage;
                 }
             }
+
+
 
             if(hurt)
             {

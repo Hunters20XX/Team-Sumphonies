@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
         timer = true;
 
+
         //StartCoroutine(MusicCoroutine());
     }
 
@@ -33,8 +34,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(timer)
+
+        if (timer)
         {
             time -= Time.deltaTime;
         }
@@ -56,8 +57,13 @@ public class GameManager : MonoBehaviour
             if (game.pause == false)
             {
                 theMusic.Play();
+
             }
         }
 
+
+
     }
+
+
 }
