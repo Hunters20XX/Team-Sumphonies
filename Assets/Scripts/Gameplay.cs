@@ -21,23 +21,18 @@ public class Gameplay : MonoBehaviour
     public int hits;
     public int score;
     public int totalNotes;
-    public int totalScore;
-    
-    public bool rankD1;
-    public bool rankC1;
-    public bool rankB1;
-    public bool rankA1;
-    public bool rankS1;
-    public bool rankD2;
-    public bool rankC2;
-    public bool rankB2;
-    public bool rankA2;
-    public bool rankS2;
     
 
     public bool pause = false;
     public bool end = false;
     public static float unscaledTime;
+
+    public bool rankF;
+    public bool rankD;
+    public bool rankC;
+    public bool rankB;
+    public bool rankA;
+    public bool rankS;
 
 
     void Start()
@@ -45,7 +40,7 @@ public class Gameplay : MonoBehaviour
 
         timerIsRunning = true;
         hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes + " = ";
-        scoreText.text = "Total Score: " + score.ToString() + " / " + totalScore + " = ";
+        scoreText.text = "Total Score: " + score.ToString();
         results.SetActive(false);
 
     }
@@ -67,58 +62,72 @@ public class Gameplay : MonoBehaviour
                 Time.timeScale = 0;
                 hitsText.text = "Total Hits: " + hits.ToString() + " / " + totalNotes;
                 scoreText.text = "Total Score: " + score.ToString();
+            }
 
-                
-                if (rankD1 == false)
-                {
-                    rankhitText.text = "Fail";
-                }
-                if (rankD2 == false)
-                {
-                    rankscoreText.text = "F";
-                }
-                if (rankD1 == true)
-                {
-                    rankhitText.text = "D";
-                }
-                if (rankD2 == true)
-                {
-                    rankscoreText.text = "D";
-                }
-                if (rankC1 == true)
-                {
-                    rankhitText.text = "C";
-                }
-                if (rankC2 == true)
-                {
-                    rankscoreText.text = "C";
-                }
-                if (rankB1 == true)
-                {
-                    rankhitText.text = "B";
-                }
-                if (rankB2 == true)
-                {
-                    rankscoreText.text = "B";
-                }
-                if (rankA1 == true)
-                {
-                    rankhitText.text = "A";
-                }
-                if (rankA2 == true)
-                {
-                    rankscoreText.text = "A";
+            if (rankD == false)
+            {
+                rankscoreText.text = "F";
+            }
 
-                }
-                if (rankS1 == true)
-                {
-                    rankhitText.text = "S";
-                }
-                if (rankS2 == true)
-                {
-                    rankscoreText.text = "S";
-                }
-            }          
+            if (rankD == true)
+            {
+                rankscoreText.text = "D";
+            }
+
+            if (rankC == true)
+            {
+                rankscoreText.text = "C";
+            }
+
+            if (rankB == true)
+            {
+                rankscoreText.text = "B";
+            }
+
+            if (rankA == true)
+            {
+                rankscoreText.text = "A";
+            }
+
+            if (rankS == true)
+            {
+                rankscoreText.text = "S";
+            }
+
+            if(score <= 600)
+            {
+                rankF = true;
+            }
+
+            if(score > 600 && score <= 1200)
+            {
+                rankF = false;
+                rankD = true;
+            }
+
+            if(score > 1200 && score <= 1800)
+            {
+                rankD = false;
+                rankC = true;
+            }
+
+            if(score > 1800 && score <= 2400)
+            {
+                rankC = false;
+                rankB = true;
+            }
+
+            if(score > 2400 && score <= 3000)
+            {
+                rankB = false;
+                rankA = true;
+            }
+
+            if(score > 3000)
+            {
+                rankA = false;
+                rankS = true;
+            }
         }
 
 
@@ -137,55 +146,6 @@ public class Gameplay : MonoBehaviour
         {
             Time.timeScale = 1;
             pauseText.SetActive(false);
-        }
-        
-        if (hits > totalNotes * 0.2)
-        {
-            rankD1 = true;
-        }
-        if (hits > totalNotes * 0.4)
-        {
-            rankC1 = true;
-            rankD1 = false;
-        }
-        if (hits > totalNotes * 0.6)
-        {
-            rankB1 = true;
-            rankC1 = false;
-        }
-        if (hits > totalNotes * 0.8)
-        {
-            rankA1 = true;
-            rankB1 = false;
-        }
-        if (hits >= totalNotes)
-        {
-            rankS1 = true;
-            rankA1 = false;
-        }
-        if (score > totalScore * 0.2)
-        {
-            rankD2 = true;
-        }
-        if (score > totalScore * 0.4)
-        {
-            rankC2 = true;
-            rankD2 = false;
-        }
-        if (score > totalScore * 0.6)
-        {
-            rankB2 = true;
-            rankC2 = false;
-        }
-        if (score > totalScore * 0.8)
-        {
-            rankA2 = true;
-            rankB2 = false;
-        }
-        if (score >= totalScore)
-        {
-            rankS2 = true;
-            rankA2 = false;
         }
     }
 

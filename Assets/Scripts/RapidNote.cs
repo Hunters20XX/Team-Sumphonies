@@ -19,6 +19,7 @@ public class RapidNote : MonoBehaviour
     FrenzyMode frenzy;
     private SpriteRenderer theSR;
     public Sprite pressedImage;
+    public Sprite attackImage;
     Gameplay game;
     ButtonController bc;
     public AudioSource swing;
@@ -167,6 +168,7 @@ public class RapidNote : MonoBehaviour
             GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 3;
             frenzy.hitsInARow = 0;
             bc.hurt = true;
+            theSR.sprite = attackImage;
             swing.Play();
             dead = true;
         }
