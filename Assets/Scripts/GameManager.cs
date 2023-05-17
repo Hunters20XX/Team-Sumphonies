@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
             time = 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && game.end == false)
+        /*if (Input.GetKeyDown(KeyCode.LeftShift) && game.end == false)
         {
             if (game.pause == true)
             {
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
             {
                 theMusic.Play();
             }
-        }
+        }*/
 
     }
 }

@@ -53,8 +53,7 @@ public class ButtonController : MonoBehaviour
 
         if (game.end == false)
         {
-            if (game.pause == false)
-            {
+            
                 if(hurt == false)
                 {
                     if (Input.GetKey(keyToPress) || Input.GetKey(keyToPress2))
@@ -77,15 +76,6 @@ public class ButtonController : MonoBehaviour
                 }
                 
 
-            }
-
-            if (Input.GetKeyDown(KeyCode.LeftShift) && game.pause == true)
-            {
-                if (hold == false)
-                {
-                    theSR.sprite = defaultImage;
-                }
-            }
 
             if(hurt)
             {

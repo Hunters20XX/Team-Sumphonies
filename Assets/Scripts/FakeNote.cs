@@ -28,7 +28,7 @@ public class FakeNote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyToPress) && game.pause == false)
+        if (Input.GetKeyDown(keyToPress))
         {
             if (canBePressed)
             {
@@ -44,7 +44,7 @@ public class FakeNote : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(keyToPress2) && game.pause == false)
+        if (Input.GetKeyDown(keyToPress2))
         {
             if (canBePressed)
             {

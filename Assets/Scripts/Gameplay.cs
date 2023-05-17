@@ -23,7 +23,7 @@ public class Gameplay : MonoBehaviour
     public int totalNotes;
     
 
-    public bool pause = false;
+    //public bool pause = false;
     public bool end = false;
     public static float unscaledTime;
 
@@ -131,7 +131,8 @@ public class Gameplay : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        
+        /*if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             pause = !pause;
 
@@ -146,7 +147,8 @@ public class Gameplay : MonoBehaviour
         {
             Time.timeScale = 1;
             pauseText.SetActive(false);
-        }
+        }*/
+        
     }
 
     void DisplayTime(float timeToDisplay)

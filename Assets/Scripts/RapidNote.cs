@@ -50,7 +50,7 @@ public class RapidNote : MonoBehaviour
         
 
 
-        if (Input.GetKeyDown(keyToPress) && game.pause == false)
+        if (Input.GetKeyDown(keyToPress))
         {
             if (canBePressed)
             {
@@ -107,7 +107,7 @@ public class RapidNote : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(keyToPress2) && game.pause == false)
+        if (Input.GetKeyDown(keyToPress2))
         {
             if (canBePressed)
             {

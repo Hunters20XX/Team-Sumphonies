@@ -65,7 +65,7 @@ public class NoteObject : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(keyToPress) && game.pause == false)
+        if (Input.GetKeyDown(keyToPress))
         {
             if (canBePressed && nice == true)
             {
@@ -298,7 +298,7 @@ public class NoteObject : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(keyToPress2) && game.pause == false)
+        if (Input.GetKeyDown(keyToPress2))
         {
             if (canBePressed && nice == true)
             {
